@@ -2,6 +2,7 @@ import axios from "axios";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import AddDetail from "../components/AddDetail";
+import "../stylesheets/albumdetails.css"
 
 import { API_URL } from "../constants";
 //Do we need to create & import a component to add comments or price to the albums?
@@ -18,6 +19,7 @@ function AlbumDetailsPage() {
 
 
   const getAlbum = () => {
+    console.log("Detailpage " + albumId)
     axios
       .get(`${API_URL}/${albumId}?_embed=details`)
       .then((response) => {
@@ -49,7 +51,8 @@ function AlbumDetailsPage() {
     <div className="AlbumDetailsPage">
 
         {album && (
-            <div>
+            <div className="albumCard">
+                <img src={album.image_url} alt="" />
                 <h1>{album.title}</h1>
                 <h2>{album.artist}</h2>
             </div>

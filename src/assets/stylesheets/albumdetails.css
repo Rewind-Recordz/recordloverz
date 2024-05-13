@@ -1,0 +1,25 @@
+/*Album Details Page's Styles*/
+
+body {
+    margin: 0;
+    text-align: center;
+    background: #dfebff;
+  }
+
+
+  .albumCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    margin: 3rem;
+  }
+
+  .albumCard img{
+    width: 60vh;
+    margin: 0 0 2rem 0;
+  }
+
+  .AddDetail {
+    height: 40vh;
+  }

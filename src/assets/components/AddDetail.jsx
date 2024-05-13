@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { API_URL } from "../constants";
 
+import "../stylesheets/albumdetails.css"
+
 function AddDetail(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
