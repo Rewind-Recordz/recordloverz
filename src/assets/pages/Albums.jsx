@@ -26,7 +26,6 @@ function Albums() {
             </div>
           );
         })}
-      ;
     </section>
   );
 }
