@@ -9,3 +9,15 @@ nav {
 #search {
     margin-bottom: 15px;
 }
+
+#genre {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#genre button {
+    margin: 10px;
+}
