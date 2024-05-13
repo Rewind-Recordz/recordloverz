@@ -2,54 +2,59 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_URL } from "../constants";
 import Search from "../components/Search";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Albums() {
   const [albums, setAlbums] = useState(null);
   useEffect(() => {
+    getAllAlbums();
+  }, []);
+
+  function getAllAlbums() {
     axios
       .get(API_URL)
       .then((response) => {
         setAlbums(response.data);
-        //console.log(albums);
       })
       .catch((e) => console.log(e));
-  }, [albums]);
+  }
 
   function searchAlbumOrArtist(query) {
-    //console.log(query);
     const needle = query.toLowerCase();
+
     const searchResult = albums.filter((album) => {
       const artistName = album.artist.toLowerCase();
-      const albumName = album.artist.toLowerCase();
-      if (artistName.indexOf(needle) !== -1 || albumName.indexOf(needle) !== -1) {
+      const albumName = album.title.toLowerCase();
+      if (
+        artistName.indexOf(needle) !== -1 ||
+        albumName.indexOf(needle) !== -1
+      ) {
         return true;
       }
     });
     setAlbums(searchResult);
-    //console.log(searchResult);
   }
 
   return (
     <>
-      <Search searchAlbumOrArtist={searchAlbumOrArtist} />
-      
+      <Search
+        searchAlbumOrArtist={searchAlbumOrArtist}
+        getAllAlbums={getAllAlbums}
+      />
+
       <section className="grid grid-cols-3 gap-10">
         {albums &&
           albums.map((album, index) => {
             return (
-              <>
-              <Link to={`/albums/${album.id}`} key={album.id}>
-              <div
-                className="p-4 rounded-lg shadow-lg bg-slate-400 drop-shadow-xl"
-                key={index}
-              >
-                <img src={album.image_url} alt={album.title} />
-                {album.artist} <br />
-                {album.title}
+              <div key={album.id}>
+                <Link to={`/albums/${album.id}`}>
+                  <div className="p-4 rounded-lg shadow-lg bg-slate-400 drop-shadow-xl">
+                    <img src={album.image_url} alt={album.title} />
+                    {album.artist} <br />
+                    {album.title}
+                  </div>
+                </Link>
               </div>
-              </Link>
-              </>
             );
           })}
       </section>
