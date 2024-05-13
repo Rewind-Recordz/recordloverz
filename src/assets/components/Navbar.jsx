@@ -17,7 +17,7 @@ function Navbar() {
               </li>
               <li class="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
                 <a href="#" class="flex items-center">
-                  About
+                  Home
                 </a>
               </li>
             </ul>
