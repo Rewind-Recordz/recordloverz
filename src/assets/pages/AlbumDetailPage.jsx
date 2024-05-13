@@ -54,7 +54,10 @@ function AlbumDetailsPage() {
             <div className="albumCard">
                 <img src={album.image_url} alt="" />
                 <h1>{album.title}</h1>
-                <h2>{album.artist}</h2>
+                <h2>Artist:  {album.artist}</h2>
+                <h2>{album.release_date}</h2>
+                <h2>{album.comments}</h2>
+                <h2>Genre: {album.genre}</h2>
             </div>
         )}
 

@@ -24,7 +24,7 @@ function AddDetail(props) {
       .then((response) => {
         //console.log(response.data);
 
-        //Here reseting the state and clear inputs
+        //Here reseting the state and clearing inputs
         setTitle("");
         setDescription("");
 
