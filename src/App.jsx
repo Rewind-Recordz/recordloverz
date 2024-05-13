@@ -11,17 +11,16 @@ export default function App() {
       <Navbar />
       {/* responsive container */}
       <div className="container mx-auto">
-        <Albums />
-      </div>
 
-
-      <Routes>
+        <Routes>
 
         <Route path="/" element={<HomePage />} />
         <Route path="/albums" element={<Albums />} /> 
-        <Route path="/albums" element={<AlbumDetailsPage />} /> 
+        <Route path="/albums/:albumId" element={<AlbumDetailsPage />} /> 
 
       </Routes>
+      </div>
+
 
     </>
   );

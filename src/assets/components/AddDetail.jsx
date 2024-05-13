@@ -20,7 +20,7 @@ function AddDetail(props) {
     axios
       .post(`${API_URL}/details`, newDetail)
       .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
 
         //Here reseting the state and clear inputs
         setTitle("");

@@ -19,9 +19,9 @@ function AlbumDetailsPage() {
 
   const getAlbum = () => {
     axios
-      .get(`${API_URL}/albums/${albumId}?_embed=details`)
+      .get(`${API_URL}/${albumId}?_embed=details`)
       .then((response) => {
-        setAlbum.apply(response.data);
+        setAlbum(response.data);
       })
       .catch((e) => console.log("Error getting album details from API", e));
   };
@@ -31,7 +31,7 @@ function AlbumDetailsPage() {
 
   const removeAlbum = () => {
     axios
-        .delete(`${API_URL}/albums/${albumId}`)
+        .delete(`${API_URL}/${albumId}`)
         .then (() => {
             navigate("/projects");
         })

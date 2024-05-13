@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_URL } from "../constants";
 import Search from "../components/Search";
+import {Link} from "react-router-dom";
 
 function Albums() {
   const [albums, setAlbums] = useState(null);
@@ -10,13 +11,13 @@ function Albums() {
       .get(API_URL)
       .then((response) => {
         setAlbums(response.data);
-        console.log(albums);
+        //console.log(albums);
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [albums]);
 
   function searchAlbumOrArtist(query) {
-    console.log(query);
+    //console.log(query);
     const needle = query.toLowerCase();
     const searchResult = albums.filter((album) => {
       const artistName = album.artist.toLowerCase();
@@ -26,7 +27,7 @@ function Albums() {
       }
     });
     setAlbums(searchResult);
-    console.log(searchResult);
+    //console.log(searchResult);
   }
 
   return (
@@ -37,6 +38,8 @@ function Albums() {
         {albums &&
           albums.map((album, index) => {
             return (
+              <>
+              <Link to={`/albums/${album.id}`} key={album.id}>
               <div
                 className="p-4 rounded-lg shadow-lg bg-slate-400 drop-shadow-xl"
                 key={index}
@@ -45,6 +48,8 @@ function Albums() {
                 {album.artist} <br />
                 {album.title}
               </div>
+              </Link>
+              </>
             );
           })}
       </section>
