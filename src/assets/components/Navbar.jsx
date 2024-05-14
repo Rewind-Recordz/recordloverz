@@ -22,14 +22,19 @@ function Navbar() {
                 </Link>
               </li>
               <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                <Link to="/add-album" className="flex items-center">
+                  Add album
+                </Link>
+              </li>
+              <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
                 <Link to="/login" className="flex items-center">
                   {isLoggedIn ? "Logout" : "Login"}
                 </Link>
               </li>
               <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                <a href="#" className="flex items-center">
-                  About
-                </a>
+                <Link to="/edit-album" className="flex items-center">
+                  Edit album
+                </Link>
               </li>
             </ul>
           </div>

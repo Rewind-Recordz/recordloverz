@@ -1,25 +1,37 @@
 /*Album Details Page's Styles*/
 
 body {
-    margin: 0;
-    text-align: center;
-    background: #dfebff;
-  }
+  margin: 0;
+  text-align: center;
+  background: #dfebff;
+}
 
+.AlbumDetailsPage {
+  height: 110vh;
+}
 
-  .albumCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 70vh;
-    margin: 3rem;
-  }
+.albumCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  margin: 3rem;
+}
 
-  .albumCard img{
-    width: 60vh;
-    margin: 0 0 2rem 0;
-  }
+.albumCard img {
+  width: 60vh;
+  margin: 0 0 2rem 0;
+}
 
-  .AddDetail {
+.AlbumInfo {
+  margin: 2rem 0rem;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  color: #fff;
+  background: #1D4ED8;
+}
+
+/* .AddDetail {
     height: 40vh;
-  }
+  } */

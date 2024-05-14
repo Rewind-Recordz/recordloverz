@@ -55,7 +55,7 @@ function Albums() {
         getGenre={getGenre}
       />
 
-      <section className="grid grid-cols-3 gap-10">
+      <section className="grid grid-cols-3 gap-10 AlbumsHeight">
         {albums?.map((album, index) => (
           <div key={album.id}>
             <Link to={`/albums/${album.id}`}>

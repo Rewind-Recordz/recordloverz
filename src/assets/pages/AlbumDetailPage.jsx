@@ -1,7 +1,6 @@
 import axios from "axios";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import AddDetail from "../components/AddDetail";
 import "../stylesheets/albumdetails.css";
 import { API_URL } from "../constants";
 import { useContext } from "react";
@@ -58,6 +57,9 @@ function AlbumDetailsPage() {
             <h2>{album.release_date}</h2>
             <h2>{album.comments}</h2>
             <h2>Genre: {album.genre}</h2>
+            <section className="AlbumInfo">
+              <p>{album.info}</p>
+            </section>
           </div>
 
           <div>
@@ -75,17 +77,20 @@ function AlbumDetailsPage() {
         // If logged in, user can delete or edit album
         isLoggedIn && (
           <div>
-            <button onClick={() => removeAlbum()} 
-            className="h-10 px-5 m-2 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline hover:bg-red-800">
+            <button
+              onClick={() => removeAlbum()}
+              className="h-10 px-5 m-2 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline hover:bg-red-800"
+            >
               Delete Album
-            </button><br />
+            </button>
+            <br />
             <button className="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800">
               Edit Album
             </button>
 
-            {/*Rendering of the component AddDetail => */}
-            <AddDetail albumId={albumId} callbackToUpdate={getAlbum} />
-            
+            {/* Rendering of the component AddDetail =>
+            <AddDetail albumId={albumId} callbackToUpdate={getAlbum} /> */}
+
             {album &&
               album.details.map((detail) => (
                 <li className="DetailCard card" key={detail.id}>
@@ -97,15 +102,8 @@ function AlbumDetailsPage() {
           </div>
         )
       }
-      {/*
-      <div className="controlButton">
-        <Link to={`/albums/edit/${albumId}`}>
-          <button>Edit</button>
-        </Link>
 
-        <button onClick={removeAlbum}>Remove</button>
-      </div>
-    */}
+   
     </div>
   );
 }

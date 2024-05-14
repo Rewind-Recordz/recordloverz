@@ -1,0 +1,50 @@
+.AddNewAlbum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.AddNewAlbum h1 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.AddNewAlbum form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    border: solid 2px #1D4ED8;
+    border-radius: 0.5rem;
+}
+
+.AddNewAlbum label {
+    display: flex;
+    padding: 1rem;
+
+}
+
+.AddNewAlbum input {
+    width: 25rem;
+}
+
+.AddNewAlbum button {
+    width: 8rem;
+    height: 3rem;
+    color: #fff;
+    font-weight: 600;
+    background: #1D4ED8;
+    border-radius: 0.5rem;;
+}
+
+.AddNewAlbum button:hover {
+    width: 8rem;
+    height: 3rem;
+    color: #1D4ED8;
+    border: solid 2px #1D4ED8;
+    background: transparent;
+    border-radius: 0.5rem;;
+}

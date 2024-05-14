@@ -3,13 +3,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { API_URL } from "../constants";
+import "../stylesheets/addalbumpage.css"
+
 
 function AddAlbumPage() {
   const [image_url, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const [release_date, setRelease] = useState("");
-  //   const [comments, setComments] = useState([]);
+  const [info, setInfo] = useState("");
   const [genre, setGenre] = useState("");
 
   const navigate = useNavigate();
@@ -22,8 +24,8 @@ function AddAlbumPage() {
       title,
       artist,
       release_date,
-      //comments, is this an Array?
       genre,
+      info
     };
 
     axios
@@ -39,11 +41,11 @@ function AddAlbumPage() {
 
   return (
     <div className="AddNewAlbum">
-      <h2>Add a new Album:</h2>
+      <h1>Add a new Album:</h1>
 
       <form onSubmit={handleSubmit}>
         <label>
-          Add cover image:
+          Add cover:
           <input
             type="text"
             name="image_url"
@@ -99,7 +101,7 @@ function AddAlbumPage() {
           <input
             type="text"
             name="genre"
-            placeholder="Enter release date"
+            placeholder="What's the genre?"
             value={genre}
             onChange={(e) => {
               setGenre(e.target.value);
@@ -107,7 +109,20 @@ function AddAlbumPage() {
           />
         </label>
 
-        <button>Create</button>
+        <label>
+          Info:
+          <input
+            type="text"
+            name="genre"
+            placeholder="Do you have more info?"
+            value={info}
+            onChange={(e) => {
+              setInfo(e.target.value);
+            }}
+          />
+        </label>
+
+        <button>Add album</button>
       </form>
     </div>
   );
