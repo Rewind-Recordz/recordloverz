@@ -32,6 +32,7 @@ function AlbumDetailsPage() {
   // Function to delete Album:
 
   const removeAlbum = () => {
+    console.log("delete");
     axios
       .delete(`${API_URL}/${albumId}`)
       .then(() => {
@@ -74,7 +75,8 @@ function AlbumDetailsPage() {
         // If logged in, user can delete or edit album
         isLoggedIn && (
           <div>
-            <button className="h-10 px-5 m-2 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline hover:bg-red-800">
+            <button onClick={() => removeAlbum()} 
+            className="h-10 px-5 m-2 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline hover:bg-red-800">
               Delete Album
             </button><br />
             <button className="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800">
