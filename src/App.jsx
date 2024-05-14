@@ -22,7 +22,7 @@ export default function App() {
             <Route path="/albums/:albumId" element={<AlbumDetailsPage />} />
           </Routes>
         </div>
-        <Footer />
+{/*         <Footer /> */}
       </AuthProvider>
   );
 }
