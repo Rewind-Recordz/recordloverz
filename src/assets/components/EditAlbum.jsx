@@ -46,7 +46,7 @@ function EditAlbum() {
         console.log(response.data);
         navigate(`/albums/${albumId}`);
       })
-      .catch(e => console.log(("Error updating album", e)))
+      .catch(e => console.log("Error updating album", e))
   };
 
   //Line for the loader
