@@ -29,7 +29,7 @@ function AddAlbumPage() {
     axios
       .post(`${API_URL}`, albumDetails)
       .then((response) => {
-        console.log("SUCCESS");
+        console.log("Success by creating the album!");
         console.log(response.data);
         navigate("/albums");
       })
