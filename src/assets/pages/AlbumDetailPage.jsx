@@ -5,6 +5,9 @@ import "../stylesheets/albumdetails.css";
 import { API_URL } from "../constants";
 import { useContext } from "react";
 import { AuthContext } from "../components/AuthContext";
+import notAvailableImg from "../images/img-not-available.png"
+
+
 //Do we need to create & import a component to add comments or price to the albums?
 function AlbumDetailsPage() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -42,7 +45,15 @@ function AlbumDetailsPage() {
       {album && (
         <div>
           <div className="albumCard">
-            <img src={album.image_url} alt="" />
+
+            <img 
+            src={album.image_url} 
+            alt={album.title}
+            onError={(e) => {
+              e.target.src=notAvailableImg
+            }}
+            />
+
             <h1>{album.title}</h1>
             <h2>Artist: {album.artist}</h2>
             <h2>{album.release_date}</h2>
@@ -67,9 +78,9 @@ function AlbumDetailsPage() {
         isLoggedIn && (
           <div>
             <Link to={`/albums/edit/${albumId}`}>
-            <button className="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800">
-              Edit Album
-            </button>
+              <button className="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800">
+                Edit Album
+              </button>
             </Link>
 
             <button

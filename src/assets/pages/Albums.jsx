@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { API_URL } from "../constants";
 import Search from "../components/Search";
 import { Link } from "react-router-dom";
+import notAvailableImg from "../images/img-not-available.png"
 
 function Albums() {
   const [albums, setAlbums] = useState(null);
@@ -59,7 +60,13 @@ function Albums() {
           <div key={album.id} className="w-full md:w-auto">
             <Link to={`/albums/${album.id}`}>
               <div className="hover:bg-white p-4 rounded-lg shadow-lg bg-slate-100 drop-shadow-xl">
-                <img src={album.image_url} alt={album.title} />
+                <img
+                  src={album.image_url}
+                  alt={album.title}
+                  onError={(e) => {
+                    e.target.src = notAvailableImg;
+                  }}
+                />
                 {album.artist} <br />
                 {album.title}
               </div>

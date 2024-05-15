@@ -17,7 +17,7 @@
     width: 45rem;
     margin-top: 2rem;
     padding: 1rem;
-    border: solid 2px #1D4ED8;
+    border: solid 2px #1f2937;
     border-radius: 0.5rem;
 }
 
@@ -36,15 +36,15 @@
     height: 3rem;
     color: #fff;
     font-weight: 600;
-    background: #1D4ED8;
+    background: #1f2937;
     border-radius: 0.5rem;;
 }
 
 .AddNewAlbum button:hover {
     width: 8rem;
     height: 3rem;
-    color: #1D4ED8;
-    border: solid 2px #1D4ED8;
+    color: #1f2937;
+    border: solid 3px #1f2937;
     background: transparent;
     border-radius: 0.5rem;;
 }
