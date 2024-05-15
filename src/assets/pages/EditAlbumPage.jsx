@@ -17,8 +17,11 @@ function EditAlbumPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${API_URL}/albums/${albumId}`)
+    axios.get(`${API_URL}/${albumId}`)
       .then((response) => {
+
+        console.log(response.data);
+
         setImage(response.data.image_url);
         setTitle(response.data.title);
         setArtist(response.data.artist);
@@ -28,6 +31,8 @@ function EditAlbumPage() {
       })
       .catch((e) => console.log("Error getting album details from API", e));
   }, [albumId]);
+
+  //****************************************************************************************
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,7 +47,7 @@ function EditAlbumPage() {
     };
 
     axios
-      .put(`${API_URL}/albums/${albumId}`, newDetails)
+      .put(`${API_URL}/${albumId}`, newDetails)
       .then((response) => {
         console.log(response.data);
         navigate(`/albums/${albumId}`);

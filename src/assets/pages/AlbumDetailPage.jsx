@@ -5,9 +5,6 @@ import "../stylesheets/albumdetails.css";
 import { API_URL } from "../constants";
 import { useContext } from "react";
 import { AuthContext } from "../components/AuthContext";
-// import { EditAlbum } from "../components/EditAlbum";
-
-//Do we need to create & import a component to add comments or price to the albums?
 
 function AlbumDetailsPage() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -61,7 +58,6 @@ function AlbumDetailsPage() {
             <section className="AlbumInfo">
               <p>{album.info}</p>
             </section>
-
           </div>
 
           <div>
@@ -77,12 +73,15 @@ function AlbumDetailsPage() {
 
       {
         // If logged in, user can delete or edit album
+        
         isLoggedIn && (
           <div>
-              
+
+            <Link to={`/albums/edit/${albumId}`}>
             <button className="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800">
               Edit Album
             </button>
+            </Link>
 
             <button
               onClick={() => removeAlbum()}
@@ -90,12 +89,9 @@ function AlbumDetailsPage() {
             >
               Delete Album
             </button>
-    
           </div>
         )
       }
-
-   
     </div>
   );
 }

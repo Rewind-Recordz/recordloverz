@@ -21,7 +21,7 @@ export default function App() {
             <Route path="/albums" element={<Albums />} />
             <Route path="/add-album" element={<AddAlbumPage />} />
             <Route path="/albums/:albumId" element={<AlbumDetailsPage />} />
-            <Route path="/edit-album" element={<EditAlbumPage />} />
+            <Route path="/albums/edit/:albumId" element={<EditAlbumPage />} />
           </Routes>
         </div>
         {/* <Footer /> */}
