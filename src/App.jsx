@@ -6,7 +6,6 @@ import Navbar from "./assets/components/Navbar";
 import Albums from "./assets/pages/Albums";
 import AlbumDetailsPage from "./assets/pages/AlbumDetailPage";
 import AddAlbumPage from "./assets/pages/AddAlbumPage";
-import EditAlbumPage from "./assets/pages/EditAlbumPage";
 import Login from "./assets/pages/Login";
 import { AuthProvider } from "./assets/components/AuthContext";
 
@@ -20,7 +19,6 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/albums" element={<Albums />} />
             <Route path="/add-album" element={<AddAlbumPage />} />
-            <Route path="/edit-album" element={<EditAlbumPage />} />
             <Route path="/albums/:albumId" element={<AlbumDetailsPage />} />
           </Routes>
         </div>

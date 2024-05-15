@@ -31,11 +31,6 @@ function Navbar() {
                   {isLoggedIn ? "Logout" : "Login"}
                 </Link>
               </li>
-              <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                <Link to="/edit-album" className="flex items-center">
-                  Edit album
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

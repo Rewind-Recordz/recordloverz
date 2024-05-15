@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { API_URL } from "../constants";
-import "../stylesheets/editalbumpage.css"
+import "../stylesheets/editalbum.css"
 
-function EditAlbumPage() {
+function EditAlbum() {
   const [image_url, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
@@ -108,4 +108,4 @@ function EditAlbumPage() {
   );
 }
 
-export default EditAlbumPage;
+export default  EditAlbum;
