@@ -23,14 +23,20 @@ nav {
     align-items: center;
   }
   
+  nav img {
+    width: 70%;
+  }
+
   /* Media query for screens below 400px width */
   @media (max-width: 400px) {
     #genre {
       flex-direction: column; /* Change to column layout */
       align-items: stretch; /* Stretch items to full width */
     }
+
+    nav img {
+        width: 50%;
+      }
   }
 
-  nav img {
-    width: 70%;
-  }
+ 
