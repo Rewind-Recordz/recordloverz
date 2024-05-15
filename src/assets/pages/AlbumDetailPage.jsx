@@ -66,9 +66,12 @@ function AlbumDetailsPage() {
         // If logged in, user can delete or edit album
         isLoggedIn && (
           <div>
+            <Link to={`/projects/edit/${projectId}`}>
             <button className="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800">
               Edit Album
             </button>
+            </Link>
+
             <button
               onClick={() => removeAlbum()}
               className="h-10 px-5 m-2 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline hover:bg-red-800"
