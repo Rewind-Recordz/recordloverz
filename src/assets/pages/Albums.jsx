@@ -17,8 +17,9 @@ function Albums() {
     axios
       .get(API_URL)
       .then((response) => {
-        setAlbums(response.data);
-        setFullAlbumsList(response.data); // Update full album list
+        const albumsFromApi = response.data.reverse(); //revert the order of the albums once a new one created appears as the first.
+        setAlbums(albumsFromApi);
+        setFullAlbumsList(albumsFromApi); // Update full album list
       })
       .catch((e) => console.log(e));
   }
