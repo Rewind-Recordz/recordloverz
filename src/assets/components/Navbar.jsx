@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../components/AuthContext";
 import { useContext, useState } from "react";
-
+import logo from "../images/record-lovers-logo.png"
 function Navbar() {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
@@ -15,7 +15,7 @@ function Navbar() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            <h1>RecordLoverz</h1>
+            <img src={logo} alt="Record Loverz Logo" />
           </span>
         </Link>
         <button

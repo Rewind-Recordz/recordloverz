@@ -30,3 +30,7 @@ nav {
       align-items: stretch; /* Stretch items to full width */
     }
   }
+
+  nav img {
+    width: 70%;
+  }
