@@ -3,40 +3,52 @@
 @tailwind utilities;
 
 body {
-    background-color: #f0f1f4;
+  background-color: #f0f1f4;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 20px;
 }
 
 nav {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+hr {
+  margin: 10px 2px 10px 2px;
+  height: 2px;
+  background-color: black;
 }
 
 #search {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 #genre {
-    margin: 0 auto;
-    margin-bottom: 15px;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav img {
+  width: 70%;
+}
+
+/* Media query for screens below 400px width */
+@media (max-width: 400px) {
+  #genre {
+    flex-direction: column; /* Change to column layout */
+    align-items: stretch; /* Stretch items to full width */
   }
-  
+
   nav img {
-    width: 70%;
+    width: 50%;
   }
-
-  /* Media query for screens below 400px width */
-  @media (max-width: 400px) {
-    #genre {
-      flex-direction: column; /* Change to column layout */
-      align-items: stretch; /* Stretch items to full width */
-    }
-
-    nav img {
-        width: 50%;
-      }
-  }
-
- 
+}
