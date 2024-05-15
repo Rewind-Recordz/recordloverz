@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
 import { API_URL } from "../constants";
-import "../stylesheets/editalbumpage.css"
+import "../stylesheets/editalbum.css"
 
-function EditAlbumPage() {
+function EditAlbum() {
   const [image_url, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
@@ -44,6 +43,7 @@ function EditAlbumPage() {
     axios
       .put(`${API_URL}/albums/${albumId}`, newDetails)
       .then((response) => {
+        console.log(response.data);
         navigate(`/albums/${albumId}`);
       })
       .catch(e => console.log(("Error updating album", e)))
@@ -108,4 +108,4 @@ function EditAlbumPage() {
   );
 }
 
-export default EditAlbumPage;
+export default EditAlbum
