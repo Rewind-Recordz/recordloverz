@@ -5,21 +5,15 @@ import "../stylesheets/albumdetails.css";
 import { API_URL } from "../constants";
 import { useContext } from "react";
 import { AuthContext } from "../components/AuthContext";
-<<<<<<< HEAD
-=======
 //Do we need to create & import a component to add comments or price to the albums?
->>>>>>> 2eb7f0328bc24e9ac3cde73bfc2d145af3f02e3d
-
 function AlbumDetailsPage() {
   const { isLoggedIn } = useContext(AuthContext);
   const [album, setAlbum] = useState(null);
   const { albumId } = useParams();
   const navigate = useNavigate();
-
   useEffect(() => {
     getAlbum();
   }, []);
-
   const getAlbum = () => {
     //console.log("Detailpage " + albumId);
     axios
@@ -29,9 +23,7 @@ function AlbumDetailsPage() {
       })
       .catch((e) => console.log("Error getting album details from API", e));
   };
-
   // Function to delete Album:
-
   const removeAlbum = () => {
     console.log("delete");
     axios
@@ -41,13 +33,10 @@ function AlbumDetailsPage() {
       })
       .catch((e) => console.log("Error deleting the album", e));
   };
-
   //For showing the loder while waiting:
-
   if (album === null) {
     return <div className="loader"></div>;
   }
-
   return (
     <div className="AlbumDetailsPage">
       {album && (
@@ -63,7 +52,6 @@ function AlbumDetailsPage() {
               <p>{album.info}</p>
             </section>
           </div>
-
           <div>
             <br />
             <Link to="/albums">
@@ -74,19 +62,13 @@ function AlbumDetailsPage() {
           </div>
         </div>
       )}
-
       {
         // If logged in, user can delete or edit album
-        
         isLoggedIn && (
           <div>
-
-            <Link to={`/albums/edit/${albumId}`}>
             <button className="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800">
               Edit Album
             </button>
-            </Link>
-
             <button
               onClick={() => removeAlbum()}
               className="h-10 px-5 m-2 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline hover:bg-red-800"
@@ -99,5 +81,4 @@ function AlbumDetailsPage() {
     </div>
   );
 }
-
 export default AlbumDetailsPage;
