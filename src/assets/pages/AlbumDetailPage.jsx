@@ -5,7 +5,6 @@ import "../stylesheets/albumdetails.css";
 import { API_URL } from "../constants";
 import { useContext } from "react";
 import { AuthContext } from "../components/AuthContext";
-import { EditAlbum } from "../components/EditAlbum";
 
 //Do we need to create & import a component to add comments or price to the albums?
 
@@ -64,10 +63,6 @@ function AlbumDetailsPage() {
           </div>
 
           <div>
-          <EditAlbum />
-          </div>
-
-          <div>
             <br />
             <Link to="/albums">
               <button className="h-10 px-5 m-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
@@ -101,7 +96,7 @@ function AlbumDetailsPage() {
                 <li className="DetailCard card" key={detail.id}>
                   <h3>{detail.title}</h3>
                   <h4>More details:</h4>
-                  <p>{detail.desciption}</p>
+                  <p>{detail.description}</p>
                 </li>
               ))}
           </div>
