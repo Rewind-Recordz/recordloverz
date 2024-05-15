@@ -5,8 +5,7 @@ import "../stylesheets/albumdetails.css";
 import { API_URL } from "../constants";
 import { useContext } from "react";
 import { AuthContext } from "../components/AuthContext";
-import notAvailableImg from "../images/img-not-available.png"
-
+import notAvailableImg from "../images/img-not-available.png";
 
 //Do we need to create & import a component to add comments or price to the albums?
 function AlbumDetailsPage() {
@@ -43,55 +42,44 @@ function AlbumDetailsPage() {
   return (
     <div className="AlbumDetailsPage">
       {album && (
-        <div>
-          <div className="albumCard">
-
-            <img 
-            src={album.image_url} 
+        <div className="albumCard">
+          <img
+            src={album.image_url}
             alt={album.title}
             onError={(e) => {
-              e.target.src=notAvailableImg
+              e.target.src = notAvailableImg;
             }}
-            />
+          />
 
-            <h1>{album.title}</h1>
-            <h2>Artist: {album.artist}</h2>
-            <h2>{album.release_date}</h2>
-            <h2>{album.comments}</h2>
-            <h2>Genre: {album.genre}</h2>
-            <section className="AlbumInfo">
-              <p>{album.info}</p>
-            </section>
-          </div>
-          <div>
-            <br />
+          <hr />
+
+          <h1>{album.title}</h1>
+          <h2>Artist: {album.artist}</h2>
+          <h2>{album.release_date}</h2>
+          <h2>{album.comments}</h2>
+          <h2>Genre: {album.genre}</h2>
+          <span className="AlbumInfo">
+            <p>{album.info}</p>
+          </span>
+
+          <div className="AlbumControllers">
             <Link to="/albums">
-              <button className="h-10 px-5 m-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
-                Back to albums
-              </button>
+              <button>Back to albums</button>
             </Link>
+            {
+              // If logged in, user can delete or edit album
+              isLoggedIn && (
+                <div className="HiddenButtons">
+                  <Link to={`/albums/edit/${albumId}`}>
+                    <button>Edit Album</button>
+                  </Link>
+                  <button className="DeleteButton" onClick={() => removeAlbum()}>Delete</button>
+                </div>
+              )
+            }
           </div>
         </div>
       )}
-      {
-        // If logged in, user can delete or edit album
-        isLoggedIn && (
-          <div>
-            <Link to={`/albums/edit/${albumId}`}>
-              <button className="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800">
-                Edit Album
-              </button>
-            </Link>
-
-            <button
-              onClick={() => removeAlbum()}
-              className="h-10 px-5 m-2 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline hover:bg-red-800"
-            >
-              Delete Album
-            </button>
-          </div>
-        )
-      }
     </div>
   );
 }
