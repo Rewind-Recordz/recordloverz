@@ -5,6 +5,10 @@ import "../stylesheets/albumdetails.css";
 import { API_URL } from "../constants";
 import { useContext } from "react";
 import { AuthContext } from "../components/AuthContext";
+<<<<<<< HEAD
+=======
+//Do we need to create & import a component to add comments or price to the albums?
+>>>>>>> 2eb7f0328bc24e9ac3cde73bfc2d145af3f02e3d
 
 function AlbumDetailsPage() {
   const { isLoggedIn } = useContext(AuthContext);
