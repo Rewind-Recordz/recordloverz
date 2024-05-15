@@ -59,7 +59,7 @@ function Albums() {
         {albums?.map((album, index) => (
           <div key={album.id}>
             <Link to={`/albums/${album.id}`}>
-              <div className="p-4 rounded-lg shadow-lg bg-slate-400 drop-shadow-xl">
+              <div className="hover:bg-white p-4 rounded-lg shadow-lg bg-slate-100 drop-shadow-xl">
                 <img src={album.image_url} alt={album.title} />
                 {album.artist} <br />
                 {album.title}

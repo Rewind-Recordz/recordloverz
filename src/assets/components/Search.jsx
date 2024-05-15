@@ -45,7 +45,6 @@ function Search(props) {
       </div>
 
       <div id="genre">
-        Genres:
         <button onClick={() => {props.getGenre('All')}} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">All</button>
         <button onClick={() => {props.getGenre('Rock')}} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
           Rock
