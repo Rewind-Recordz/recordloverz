@@ -4,12 +4,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import { API_URL } from "../constants";
 import "../stylesheets/editalbum.css"
 
-function EditAlbum() {
+function EditAlbumPage() {
+
   const [image_url, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const [release_date, setRelease] = useState("");
-  //   const [comments, setComments] = useState([]);
+  const [info, setInfo] = useState("");
   const [genre, setGenre] = useState("");
 
   const { albumId } = useParams();
@@ -22,7 +23,7 @@ function EditAlbum() {
         setTitle(response.data.title);
         setArtist(response.data.artist);
         setRelease(response.data.release_date);
-        // setComments(response.data.comments)
+        setInfo(response.data.info)
         setGenre(response.data.genre);
       })
       .catch((e) => console.log("Error getting album details from API", e));
@@ -36,8 +37,8 @@ function EditAlbum() {
       title,
       artist,
       release_date,
-      //comments,
       genre,
+      info
     };
 
     axios
@@ -46,7 +47,7 @@ function EditAlbum() {
         console.log(response.data);
         navigate(`/albums/${albumId}`);
       })
-      .catch(e => console.log(("Error updating album", e)))
+      .catch(e => console.log("Error updating album", e))
   };
 
   //Line for the loader
@@ -102,10 +103,20 @@ function EditAlbum() {
           />
         </label>
 
+        <label>
+          Info:
+          <input
+            type="text"
+            name="info"
+            value={info}
+            onChange={(e) => setGenre(e.target.value)}
+          />
+        </label>
+
         <button type="submit">Update Project</button>
       </form>
     </div>
   );
 }
 
-export default EditAlbum
+export default EditAlbumPage;

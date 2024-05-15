@@ -5,7 +5,7 @@ import "../stylesheets/albumdetails.css";
 import { API_URL } from "../constants";
 import { useContext } from "react";
 import { AuthContext } from "../components/AuthContext";
-import { EditAlbum } from "../components/EditAlbum";
+// import { EditAlbum } from "../components/EditAlbum";
 
 //Do we need to create & import a component to add comments or price to the albums?
 
@@ -79,21 +79,17 @@ function AlbumDetailsPage() {
         // If logged in, user can delete or edit album
         isLoggedIn && (
           <div>
+              
+            <button className="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800">
+              Edit Album
+            </button>
+
             <button
               onClick={() => removeAlbum()}
               className="h-10 px-5 m-2 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline hover:bg-red-800"
             >
               Delete Album
             </button>
-            <br />
-
-            <div className="EditSection">
-              <EditAlbum />
-            </div>
-
-            {/* <button className="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800">
-              Edit Album
-            </button> */}
     
           </div>
         )
