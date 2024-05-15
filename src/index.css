@@ -21,4 +21,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
+  
+  /* Media query for screens below 400px width */
+  @media (max-width: 400px) {
+    #genre {
+      flex-direction: column; /* Change to column layout */
+      align-items: stretch; /* Stretch items to full width */
+    }
+  }

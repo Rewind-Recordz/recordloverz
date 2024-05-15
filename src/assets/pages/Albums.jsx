@@ -28,10 +28,7 @@ function Albums() {
     const searchResult = fullAlbumsList.filter((album) => {
       const artistName = album.artist.toLowerCase();
       const albumName = album.title.toLowerCase();
-      if (
-        artistName.includes(needle) ||
-        albumName.includes(needle)
-      ) {
+      if (artistName.includes(needle) || albumName.includes(needle)) {
         return true;
       }
     });
@@ -43,7 +40,9 @@ function Albums() {
     if (query === "All") {
       return;
     }
-    const searchResult = fullAlbumsList.filter((album) => album.genre === query);
+    const searchResult = fullAlbumsList.filter(
+      (album) => album.genre === query
+    );
     setAlbums(searchResult);
   }
 
@@ -55,9 +54,9 @@ function Albums() {
         getGenre={getGenre}
       />
 
-      <section className="grid grid-cols-3 gap-10 AlbumsHeight">
+      <section className="grid gap-5 md:grid-cols-3 ml-5 mr-5">
         {albums?.map((album, index) => (
-          <div key={album.id}>
+          <div key={album.id} className="w-full md:w-auto">
             <Link to={`/albums/${album.id}`}>
               <div className="hover:bg-white p-4 rounded-lg shadow-lg bg-slate-100 drop-shadow-xl">
                 <img src={album.image_url} alt={album.title} />
