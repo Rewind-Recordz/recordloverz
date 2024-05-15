@@ -1,10 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { API_URL } from "../constants";
 import "../stylesheets/addalbumpage.css"
-
 
 function AddAlbumPage() {
   const [image_url, setImage] = useState("");
@@ -20,18 +18,19 @@ function AddAlbumPage() {
     e.preventDefault();
 
     const albumDetails = {
-      image_url,
-      title,
-      artist,
-      release_date,
-      genre,
-      info
+      image_url: image_url,
+      title:  title,
+      artist: artist,
+      release_date: release_date,
+      genre: genre,
+      info: info
     };
 
     axios
-      .post(`${API_URL}/albums`, albumDetails)
+      .post(`${API_URL}`, albumDetails)
       .then((response) => {
-        //once the album is created navigate take us to the albums page
+        console.log("SUCCESS");
+        console.log(response.data);
         navigate("/albums");
       })
       .catch((e) =>
