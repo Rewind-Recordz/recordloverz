@@ -21,7 +21,7 @@ function Search(props) {
   return (
     <div>
       <div id="search">
-        <div className="flex items-center px-4 py-3 rounded-md border-2 border-blue-500 overflow-hidden max-w-md mx-auto font-[sans-serif]">
+        <div className="flex items-center px-4 py-3 rounded-md border-2 border-gray-700 overflow-hidden max-w-md mx-auto font-[sans-serif]">
           <form onSubmit={onSubmit} className="flex w-full">
             <input
               name="searchAlbumOrArtist"
@@ -45,20 +45,47 @@ function Search(props) {
       </div>
 
       <div id="genre">
-        <button onClick={() => {props.getGenre('All')}} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">All</button>
-        <button onClick={() => {props.getGenre('Rock')}} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <button
+          onClick={() => {
+            props.getGenre("All");
+          }}
+          className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-700 dark:hover:bg-gray-800 dark:focus:ring-gray-700 dark:border-gray-700"
+        >
+          All
+        </button>
+        <button
+          onClick={() => {
+            props.getGenre("Rock");
+          }}
+          className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-700 dark:hover:bg-gray-800 dark:focus:ring-gray-700 dark:border-gray-700"
+        >
           Rock
         </button>
 
-        <button onClick={() => {props.getGenre('Folk Rock')}} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <button
+          onClick={() => {
+            props.getGenre("Folk Rock");
+          }}
+          className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-700 dark:hover:bg-gray-800 dark:focus:ring-gray-700 dark:border-gray-700"
+        >
           Folk Rock
-        </button>     
-        <button onClick={() => {props.getGenre('Pop')}} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        </button>
+        <button
+          onClick={() => {
+            props.getGenre("Pop");
+          }}
+          className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-700 dark:hover:bg-gray-800 dark:focus:ring-gray-700 dark:border-gray-700"
+        >
           Disco
-        </button>  
-        <button onClick={() => {props.getGenre('Soul')}} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        </button>
+        <button
+          onClick={() => {
+            props.getGenre("Soul");
+          }}
+          className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-700 dark:hover:bg-gray-800 dark:focus:ring-gray-700 dark:border-gray-700"
+        >
           Soul
-        </button>  
+        </button>
       </div>
     </div>
   );
