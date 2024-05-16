@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { API_URL } from "../constants";
 import Search from "../components/Search";
 import { Link } from "react-router-dom";
-import notAvailableImg from "../images/img-not-available.png"
+import notAvailableImg from "../images/img-not-available.png";
 
 function Albums() {
   const [albums, setAlbums] = useState(null);
@@ -68,9 +68,11 @@ function Albums() {
                     e.target.src = notAvailableImg;
                   }}
                 />
-                <h1>{album.title}</h1>
-                <hr />
-                {album.artist}
+                <div class="text-center mt-2">
+                  <h1>{album.title}</h1>
+                  <hr />
+                  {album.artist}
+                </div>
               </div>
             </Link>
           </div>
