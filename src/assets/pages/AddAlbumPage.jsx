@@ -2,7 +2,6 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../constants";
-import "../stylesheets/addalbumpage.css";
 import { AuthContext } from "../components/AuthContext";
 
 function AddAlbumPage() {
@@ -13,23 +12,22 @@ function AddAlbumPage() {
   const [info, setInfo] = useState("");
   const [genre, setGenre] = useState("");
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
-
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const albumDetails = {
-      image_url: image_url,
-      title: title,
-      artist: artist,
-      release_date: release_date,
-      genre: genre,
-      info: info,
+      image_url,
+      title,
+      artist,
+      release_date,
+      genre,
+      info,
     };
 
     axios
-      .post(`${API_URL}`, albumDetails)
+      .post(API_URL, albumDetails)
       .then((response) => {
         console.log("Success by creating the album!");
         console.log(response.data);
@@ -41,100 +39,115 @@ function AddAlbumPage() {
   };
 
   return (
-    <div className="AddNewAlbum">
-      {isLoggedIn ? (
-        <>
-          <h1>Add a new Album:</h1>
+    <div className="flex justify-center mt-10">
+      <div className="w-full max-w-lg">
+        {isLoggedIn ? (
+          <>
+            <h1 className="mb-6">Add a new Album</h1>
 
-          <form onSubmit={handleSubmit}>
-            <label>
-              Add cover:
-              <input
-                type="text"
-                name="image_url"
-                placeholder="image URL"
-                value={image_url}
-                onChange={(e) => {
-                  setImage(e.target.value);
-                }}
-              />
-            </label>
+            <form className="w-[500px]" onSubmit={handleSubmit}>
 
-            <label>
-              Title:
-              <input
-                type="text"
-                name="title"
-                placeholder="Enter album's title"
-                value={title}
-                onChange={(e) => {
-                  setTitle(e.target.value);
-                }}
-              />
-            </label>
+              <div className="mb-4 flex items-center">
+                <label className="block text-gray-700 text-sm font-bold mr-2 w-32" style={{ marginTop: "3px", textAlign: "left" }}>
+                  Title:
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  name="title"
+                  placeholder="Enter album title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+              </div>
 
-            <label>
-              Artist:
-              <input
-                type="text"
-                name="artist"
-                placeholder="Enter the artist"
-                value={artist}
-                onChange={(e) => {
-                  setArtist(e.target.value);
-                }}
-              />
-            </label>
+              {/* Input for Artist */}
+              <div className="mb-4 flex items-center">
+                <label className="block text-gray-700 text-sm font-bold mr-2 w-32" style={{ marginTop: "3px", textAlign: "left" }}>
+                  Artist:
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  name="artist"
+                  placeholder="Enter the artist"
+                  value={artist}
+                  onChange={(e) => setArtist(e.target.value)}
+                />
+              </div>
 
-            <label>
-              Release Date:
-              <input
-                type="text"
-                name="release_date"
-                placeholder="Enter release date"
-                value={release_date}
-                onChange={(e) => {
-                  setRelease(e.target.value);
-                }}
-              />
-            </label>
+              <div className="mb-4 flex items-center">
+                <label className="block text-gray-700 text-sm font-bold mr-2 w-32" style={{ marginTop: "3px", textAlign: "left" }}>
+                  Add cover:
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  name="image_url"
+                  placeholder="Image URL"
+                  value={image_url}
+                  onChange={(e) => setImage(e.target.value)}
+                />
+              </div>
 
-            <label>
-              Genre:
-              <input
-                type="text"
-                name="genre"
-                placeholder="What's the genre?"
-                value={genre}
-                onChange={(e) => {
-                  setGenre(e.target.value);
-                }}
-              />
-            </label>
+              <div className="mb-4 flex items-center">
+                <label className="block text-gray-700 text-sm font-bold mr-2 w-32" style={{ marginTop: "3px", textAlign: "left" }}>
+                  Release Date:
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  name="release_date"
+                  placeholder="YYYY-MM-DD"
+                  value={release_date}
+                  onChange={(e) => setRelease(e.target.value)}
+                />
+              </div>
 
-            <label>
-              Info:
-              <input
-                type="text"
-                name="genre"
-                placeholder="Do you have more info?"
-                value={info}
-                onChange={(e) => {
-                  setInfo(e.target.value);
-                }}
-              />
-            </label>
+              <div className="mb-4 flex items-center">
+                <label className="block text-gray-700 text-sm font-bold mr-2 w-32" style={{ marginTop: "3px", textAlign: "left" }}>
+                  Genre:
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  name="genre"
+                  placeholder="What's the genre?"
+                  value={genre}
+                  onChange={(e) => setGenre(e.target.value)}
+                />
+              </div>
 
-            <button>Add album</button>
-          </form>
-        </>
-      ) : (
-        <Link to="/login">
-          <button className="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800">
-            Login
-          </button>
-        </Link>
-      )}
+              <div className="mb-4 flex items-center">
+                <label className="block text-gray-700 text-sm font-bold mr-2 w-32" style={{ marginTop: "3px", textAlign: "left" }}>
+                  Info:
+                </label>
+                <textarea
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  rows="5"
+                  name="info"
+                  placeholder="Album information"
+                  value={info}
+                  onChange={(e) => setInfo(e.target.value)}
+                />
+              </div>
+
+              <button
+                className="w-[200px] bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-[100px]"
+                type="submit"
+              >
+                Add album
+              </button>
+            </form>
+          </>
+        ) : (
+          <Link to="/login">
+            <button className="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+              Login
+            </button>
+          </Link>
+        )}
+      </div>
     </div>
   );
 }
