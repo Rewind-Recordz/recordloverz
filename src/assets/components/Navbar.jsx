@@ -11,7 +11,7 @@ function Navbar() {
     setMenuOpen(!menuOpen); // Toggle menu visibility
   };
   return (
-    <nav className="sticky top-0 z-10 border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+    <nav className="sticky top-0 z-10 border-gray-700 bg-gray-800 dark:bg-gray-800 dark:border-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/">
 
@@ -19,11 +19,11 @@ function Navbar() {
 
         </Link>
         <button
-          onClick={toggleMenu} // Add onClick event handler
+          onClick={toggleMenu}
           type="button"
           className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-hamburger"
-          aria-expanded={menuOpen ? "true" : "false"} // Dynamically set aria-expanded
+          aria-expanded={menuOpen ? "true" : "false"}
         >
           <span className="sr-only">Open main menu</span>
           <svg
