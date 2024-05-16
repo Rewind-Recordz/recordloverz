@@ -57,7 +57,7 @@ function Albums() {
       />
 
       <section className="grid gap-5 md:grid-cols-3 ml-5 mr-5 mb-5 CoverCard">
-        {albums?.map((album, index) => (
+        {albums?.map((album) => (
           <div key={album.id} className="w-full md:w-auto">
             <Link to={`/albums/${album.id}`}>
               <div className="hover:bg-white p-4 rounded-lg shadow-lg bg-slate-100 drop-shadow-xl">
