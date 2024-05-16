@@ -3,7 +3,7 @@ import "../stylesheets/footer.css"
 function Footer() {
   return (
     <div className="footer">
-      <h2>This is the Footer</h2>
+      <a href="https://github.com/Rewind-Recordz">Record Loverz © - ➯ GitHub</a>
     </div>
   );
 }

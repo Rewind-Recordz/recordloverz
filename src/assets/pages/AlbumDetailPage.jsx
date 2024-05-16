@@ -51,7 +51,7 @@ function AlbumDetailsPage() {
             }}
           />
 
-          <hr />
+          <br />
 
           <h1>{album.title}</h1>
           <h2>Artist: {album.artist}</h2>

@@ -1,22 +1,15 @@
 /*Album Details Page's Styles*/
 
-body {
-  margin: 0;
-  text-align: center;
-  background: #dfebff;
-}
-
 .AlbumDetailsPage {
-  height: 110vh;
+  height: 70rem;
 }
 
 .albumCard {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 70vh;
+  height: 37rem;
   margin: 3rem;
-  color: #1f2937;
 }
 
 .albumCard h1 {
@@ -64,3 +57,53 @@ body {
 
 }
 
+/*Responsive Site for smartphones*/
+
+@media (max-width: 400px) {
+
+  .AlbumDetailsPage {
+    height: 65rem;
+  }
+
+  .albumCard {
+    height: 37rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .AlbumInfo {
+    width: 100%;
+    border-radius: 0.5rem;
+    color: #1f2937;
+    border: solid 1px #1f2937;
+    font-size: 13px;
+    text-align: justify;
+  }
+  
+  .AlbumControllers {
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+  }
+
+  .AlbumControllers button {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+  }
+
+  .HiddenButtons  {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .HiddenButtons button {
+    width: auto;
+    flex-direction: column;
+    margin: 0.5rem 0;
+  }
+}

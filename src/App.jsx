@@ -1,8 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./assets/components/Navbar";
-// import Footer from "./assets/components/Footer";
-// import HomePage from "./assets/pages/HomePage";
+import Footer from "./assets/components/Footer";
 import Albums from "./assets/pages/Albums";
 import AlbumDetailsPage from "./assets/pages/AlbumDetailPage";
 import AddAlbumPage from "./assets/pages/AddAlbumPage";
@@ -26,7 +25,7 @@ export default function App() {
             <Route path="/about" element={<AboutPage/>}/>
           </Routes>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </AuthProvider>
   );
 }
