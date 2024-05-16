@@ -42,7 +42,7 @@ function Navbar() {
             />
           </svg>
         </button>
-        <div
+        <div onMouseLeave={toggleMenu} 
           className={`absolute right-0 top-full w-1/5 mt-0 ${
             menuOpen ? "" : "hidden"
           }`}
