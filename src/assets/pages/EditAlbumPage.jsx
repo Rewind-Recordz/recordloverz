@@ -114,7 +114,7 @@ function EditAlbumPage() {
             type="text"
             name="info"
             value={info}
-            onChange={(e) => setGenre(e.target.value)}
+            onChange={(e) => setInfo(e.target.value)}
           />
         </label>
 

@@ -5,8 +5,8 @@
     margin-top: 5vh;
 }
 
-.AddNewAlbum h1 {
-    font-weight: 600;
+.AddNewAlbum h2 {
+    font-weight: 800;
     font-size: 20px;
 }
 
@@ -14,20 +14,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 45rem;
+    width: 40rem;
     margin-top: 2rem;
     padding: 1rem;
-    border: solid 2px #1f2937;
+    border: solid 3px #1f2937;
     border-radius: 0.5rem;
 }
 
 .AddNewAlbum label {
     display: flex;
+    flex-direction: row;
     padding: 1rem;
 
 }
 
 .AddNewAlbum input {
+    background-color: aliceblue;
+    border: solid 1px #1f2937;
+    border-radius: 0.2rem;
+    margin: 0 0.5rem;
+    height: 1.5;
     width: 25rem;
 }
 
