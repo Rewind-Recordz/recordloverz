@@ -2,7 +2,6 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { API_URL } from "../constants";
-import "../stylesheets/editalbum.css"
 import { AuthContext } from "../components/AuthContext";
 
 function EditAlbumPage() {
