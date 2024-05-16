@@ -61,7 +61,6 @@ function AddAlbumPage() {
                 />
               </div>
 
-              {/* Input for Artist */}
               <div className="mb-4 flex items-center">
                 <label className="block text-gray-700 text-sm font-bold mr-2 w-32" style={{ marginTop: "3px", textAlign: "left" }}>
                   Artist:
