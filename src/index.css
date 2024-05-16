@@ -72,6 +72,8 @@ nav img {
     margin: 0.5rem 1rem 0.5rem 1rem;
   }
   
+  /*Responsive NavBar*/
+
   .max-w-screen-xl.flex.flex-wrap.items-center.justify-between.mx-auto.p-4 {
     display: flex;
     flex-direction: column; 
@@ -96,8 +98,8 @@ nav img {
   }
 
   .flex.justify-center.mt-10 > div > form > div label {
-    width: 8rem;
-    margin-bottom: 5px; /* Add a small margin between labels */
+    width: 5rem;
+    margin-bottom: 5px;
   }
 
   /* Center the submit button horizontally */
@@ -106,6 +108,5 @@ nav img {
     margin-left: 6rem;
     margin-right: auto;
   }
-
 
 }
