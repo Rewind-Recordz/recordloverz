@@ -1,15 +1,18 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../components/AuthContext";
-import { ADMIN_LOGIN, ADMIN_PASSWORD, API_URL } from "../constants";
+import { ADMIN_LOGIN, ADMIN_PASSWORD } from "../constants";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function handleLogin() {
     if (username === ADMIN_LOGIN && password === ADMIN_PASSWORD) {
       setIsLoggedIn(true);
+      navigate(`/albums`);
     }
   }
 

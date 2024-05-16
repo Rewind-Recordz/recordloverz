@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "../stylesheets/aboutpage.css";
 import adminOne from "../images/admin1.png";
 import adminTwo from "../images/admin2.png";

@@ -63,11 +63,49 @@ nav img {
 /* Media query for screens below 400px width */
 @media (max-width: 400px) {
   #genre {
+    display: flex;
     flex-direction: column; /* Change to column layout */
     align-items: stretch; /* Stretch items to full width */
   }
 
-  nav img {
-    width: 50%;
+  #search {
+    margin: 0.5rem 1rem 0.5rem 1rem;
   }
+  
+  .max-w-screen-xl.flex.flex-wrap.items-center.justify-between.mx-auto.p-4 {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  .max-w-screen-xl.flex.flex-wrap.items-center.justify-between.mx-auto.p-4 img {
+    width: 50%;
+    margin: 0 0 1rem 5.1rem; /* Add space between the image and menu */
+  }
+
+  /*RESPONSIVE FORMULARS*/
+
+  .flex.justify-center.mt-10 > div > form > div {
+    margin: 0 1rem 1rem 1.5rem;
+    width: 20rem;
+  }
+
+  .flex.justify-center.mt-10 > div > h1 {
+    margin-left: 7.5rem;
+  }
+
+  .flex.justify-center.mt-10 > div > form > div label {
+    width: 8rem;
+    margin-bottom: 5px; /* Add a small margin between labels */
+  }
+
+  /* Center the submit button horizontally */
+  .flex.justify-center.mt-10 > div > form button {
+    margin-top: 1rem;
+    margin-left: 6rem;
+    margin-right: auto;
+  }
+
+
 }
