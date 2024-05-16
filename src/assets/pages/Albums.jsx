@@ -56,7 +56,7 @@ function Albums() {
         getGenre={getGenre}
       />
 
-      <section className="grid gap-5 md:grid-cols-3 ml-5 mr-5 mb-5 CoverCard">
+      <section className="grid gap-5 md:grid-cols-3 ml-5 mr-5 mb-10">
         {albums?.map((album) => (
           <div key={album.id} className="w-full md:w-auto">
             <Link to={`/albums/${album.id}`}>
