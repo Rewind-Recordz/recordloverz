@@ -28,11 +28,13 @@
 - You'll need to install the `css framework` `Tailwind`. Run in the terminal:
   <br/>
   <br/>
-  `npm install axios`.
+  `npm install -D tailwindcss`
+  <br />
+  `npx tailwindcss init.`
 
 - Off course once you are trying our deployed app for `Record Loverz` you will need an user and a password right?
-<br/>
-`SEND US A MESSAGE WE'LL ALLOW YOU TO TRY IT`
+  <br/>
+  `SEND US A MESSAGE WE'LL ALLOW YOU TO TRY IT`
 
 ## NOW WATCH THE MAGIC HERE =>
 
@@ -42,7 +44,6 @@ https://recordloverz.netlify.app/
 ![Alien Survivor v.01](./src/assets/images/freddiemercury.webp)
 
 # Off course we're usin Vite as de developer server hehehe...
-
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
